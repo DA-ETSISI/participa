@@ -27,9 +27,34 @@ collectionList.forEach(collection => {
 
 db.parameters.insert({
     _id: ObjectId('6726ce49c8b45bdd85cf64e8'),
-    candidates: {
-        'test': 'test',
-    },
+    candidates: [
+        {
+            name: 'Óscar',
+            surname: 'García Suárez',
+            image: 'oscar-garcia.webp',
+            socialMedia: [
+                {
+                    icon: 'globe',
+                    url: 'https://example.com/oscar'
+                },
+                {
+                    icon: 'twitter',
+                    url: 'https://twitter.com/oscar'
+                }
+            ],
+            details: {
+                antiguedad: '32 años',
+                estudios: 'Doctor, Ingeniero Industrial por la UPM',
+                centro: 'ETSI. Industriales.',
+                departamento: 'Automática, Ingeniería Eléctrica y Electrónica e Informática Industrial.',
+                areaConocimiento: 'Tecnología Electrónica.',
+                categoriaDocente: 'Catedrático de Universidad.'
+            },
+            emailInstitucional: 'candidato.oscar.garcia@upm.es',
+            programUrl: 'https://example.com/oscar/programa',
+            signedCommitmentsDoc: true
+        }
+    ],
     categories: {
         general: 'General',
         economic: 'Financiación',
@@ -106,7 +131,9 @@ db.parameters.insert({
     },
     colors: {
         primary: '#00509b',
-        secondary: '#ffffff',
+        secondary: '#00509b',
+        primaryButton: '#00509b',
+        secondaryButton: '#00509b',
     },
     featureFlags: {
         'questions': true,
@@ -114,6 +141,7 @@ db.parameters.insert({
         'process': true,
         'dates': true
     },
+    // schoolRestricted: 61, Only enable if you want to restrict the school to the number of the center.
     text: {
         pageTitle: 'Participa DA-UPM',
         headerTitle: 'Propuestas para el Rector/a',
